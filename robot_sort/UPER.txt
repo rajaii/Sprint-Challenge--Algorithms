@@ -1,0 +1,84 @@
+use the robot class to sort lists
+can use comparisons operators, iterators, define methods, pre-defined robot methods
+
+insertion (more efficient on some cases) or selection sort
+
+may use light to be indicator if holding:
+    if light on and thus holding compare in hand to all the others
+
+    if light off and at end of list list is sorted  
+
+    
+
+
+
+lay out cards and try to sort
+
+i
+[0,1,2,3,4]
+l
+[3,4,6,7,2]
+ 
+when compare_item() == 1 the robot should swap 
+
+can set light on when need to go back and turn 
+
+Pseudo:
+
+
+start at [0] light off compare everything to 0 if less than 0 light is on pick up move to 0 shift everything else right 
+start at l[1] light off compare everything to 1 and if l[i] is less than 1 light on pick up and compare the rest of list until smalles one and move back to l[1]
+start at l[2] and so on until light is off at l[len(l)-1]
+
+
+
+
+
+running and debuggind
+ 
+[1,5,3,2,9,6] 
+
+bug
+looping first round ok
+ then swapping none with 6?
+
+ comment out previous code under ######################
+
+ try tanscompiling selection sort into this
+ cur_index = self.position
+ self._item = smallest index
+
+ didn't work because the class was short 1 var couldn't store temp
+
+ Try implementing bubble sort transpile it:
+
+ It WORKED!!!
+
+ accessed initial variables
+
+ try while loop to just move bot with functions over and do everything manually not accessing variables
+
+ while true run initial
+  while can move right switch and compare everything
+  while can move left switch and compare everything turning light on everytime compareiten() == -1
+  if light is off return list
+
+
+                
+
+    Egg question:
+5 story
+5
+4
+3 see if breaks
+2
+1
+
+How many eggs.  find f without breaking that many eggs.
+
+I would use the same thing that gets used in binary search.  I would start in the middle, and drop one and see if it breaks, if it does, I would go up half of the floors left, and if not I would go down half the floors left.
+I would keep repeating the process halfing the floors left until I 0 in on the correct floor for f.
+
+This would give a runtime of Ologn which is very efficient.
+
+

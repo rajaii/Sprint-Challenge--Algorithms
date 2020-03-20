@@ -96,17 +96,100 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        # Fill this out
-        pass
+       # Fill this out
+        # for i in range(len(self._list)):
+        #     for j in range(0, len(self._list) - i - 1):
+        #         if self._list[j] > self._list[j + 1]:
+        #             self._item = self._list[j]
+        #             self._list[j] = self._list[j + 1]
+        #             self._list[j + 1] = self._item
+                    
+
+        # return self._list
+      # set initial loop to run indefinitely 
+        while True:
+                # indicate the list is not-sorted
+                self.set_light_off()
+                # move right to start
+                while self.can_move_right():
+                    # take the current item and move right for comparison
+                    self.swap_item()
+                    self.move_right()
+                    # if held item is greater than observed item, swap
+                    if self.compare_item() == 1:
+                        self.swap_item()
+                    # take current item, move left, and swap
+                    self.move_left()
+                    self.swap_item()
+                    # move right, and start comparing again
+                    self.move_right()
+                # once at end of list, move left and make comparison
+                while self.can_move_left():
+                    # take the last item and move left for comparison
+                    self.swap_item()
+                    self.move_left()
+                    # if held item is less than observed item, swap them
+                    if self.compare_item() == -1:
+                        self.swap_item()
+                        # move back to the left, set light to on so can return when off
+                        self.set_light_on()
+                    # take the current item, move right, and swap them
+                    self.move_right()
+                    self.swap_item()
+                    # move left, and start the comparison loop over again
+                    self.move_left()
+                # break loop
+                if self.light_is_on() == False:
+                    return self._list
+
+      
+                        
 
 
-if __name__ == "__main__":
-    # Test our your implementation from the command line
-    # with `python robot_sort.py`
+# if __name__ == "__main__":
+#     # Test our your implementation from the command line
+#     # with `python robot_sort.py`
 
-    l = [15, 41, 58, 49, 26, 4, 28, 8, 61, 60, 65, 21, 78, 14, 35, 90, 54, 5, 0, 87, 82, 96, 43, 92, 62, 97, 69, 94, 99, 93, 76, 47, 2, 88, 51, 40, 95, 6, 23, 81, 30, 19, 25, 91, 18, 68, 71, 9, 66, 1, 45, 33, 3, 72, 16, 85, 27, 59, 64, 39, 32, 24, 38, 84, 44, 80, 11, 73, 42, 20, 10, 29, 22, 98, 17, 48, 52, 67, 53, 74, 77, 37, 63, 31, 7, 75, 36, 89, 70, 34, 79, 83, 13, 57, 86, 12, 56, 50, 55, 46]
+#     l = [15, 41, 58, 49, 26, 4, 28, 8, 61, 60, 65, 21, 78, 14, 35, 90, 54, 5, 0, 87, 82, 96, 43, 92, 62, 97, 69, 94, 99, 93, 76, 47, 2, 88, 51, 40, 95, 6, 23, 81, 30, 19, 25, 91, 18, 68, 71, 9, 66, 1, 45, 33, 3, 72, 16, 85, 27, 59, 64, 39, 32, 24, 38, 84, 44, 80, 11, 73, 42, 20, 10, 29, 22, 98, 17, 48, 52, 67, 53, 74, 77, 37, 63, 31, 7, 75, 36, 89, 70, 34, 79, 83, 13, 57, 86, 12, 56, 50, 55, 46]
 
-    robot = SortingRobot(l)
+#     robot = SortingRobot(l)
 
-    robot.sort()
-    print(robot._list)
+#     robot.sort()
+#     print(robot._list)
+
+
+  #loop through 2ce comparing i to j to see which is lower
+        # for i in range(len(self._list)):
+        #     for j in range(i + 1, len(self._list)):
+        #         #if you find lower value swap and set light on 
+        #         #swapped none with j keep in mind
+        #         #cur index = i
+        #         self.position = i
+        #         #smallest index = cur index
+        #         self._item = self._position
+        #         ################################################
+        #         # self.move_right()
+        #         # print(f'i: {self._list[i]}, j: {self._list[j]}')
+        
+        #         # can also use self.compare_item for such logic swap out if bugs occur
+               
+        #        #######################################################3
+        #         if self._list[j] < self._list[i]:
+
+        #             #is not swapping here
+        #             print(f'swapping {self._item} with {self._list[self._position]}')
+        #             self.swap_item()
+        #             print(f'self._item: {self._item}')
+        #             self.set_light_on()
+        #             print('light is on now')
+        #             #move left until at beginning of list
+        #             for k in range(j, len(self._list) - 1, -1):
+        #                 self.move_left()
+        #             #swap item making list[0] == aforementioned self.list[j]
+        #             self.swap_item()
+        #             #move left back to j and swap l[0 ] with none
+        #             for steps in range(j):
+        #                 if self.can_move_right:
+        #                     self.move_right()
+        #             self.swap_item()
+        #             self.set_light_off()
