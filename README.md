@@ -32,11 +32,25 @@ For this portion of the Sprint Challenge, you'll be answering questions posed in
 
 Given 3 blocks of code, identify the runtime of each. Justify your answer.
 
+The big o is used to analyze the runtime.  O stands for the number of operations required to run a particular function.  one could be constant, logarithmic, or exponential.  As the inputs increase constant has diminishing returns, and exponential is even worse.  logarithmic runtime is the better of the three.
+
+analysis of recursive merge sort:
+
+analysis of selection sort:
+
+analysis of bubble sort:
+
+
+
 #### 2. Find the highest floor _(3 points)_
 
 Suppose that you have an n-story building and plenty of eggs. Suppose also that an egg gets broken if it is thrown off floor f or higher, and doesn't get broken if dropped off a floor less than floor f. Devise a strategy to determine the value of f such that the number of dropped + broken eggs is minimized.
 
 Write out your proposed algorithm in plain English or pseudocode AND give the runtime complexity of your solution.
+
+
+
+
 
 ### Code Challenges
 
